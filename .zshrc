@@ -44,14 +44,6 @@ zinit cdreplay -q
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-#Path
-
-export USER_GCP="gustavo_hitomi"
-export PATH="$PATH:/opt/nvim/"
-export JAVA_HOME=/usr/bin/
-export PATH="/home/hitomi/.local/bin:$PATH"
-. "$HOME/.asdf/asdf.sh"
-
 # Keybindings
 bindkey -e
 bindkey '^p' history-search-backward
@@ -77,6 +69,13 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
+#Path
+export USER_GCP="gustavo_hitomi"
+export PATH="$PATH:/opt/nvim/"
+export JAVA_HOME=/usr/bin/
+export PATH="/home/hitomi/.local/bin:$PATH"
+. "$HOME/.asdf/asdf.sh"
+
 # Aliases
 alias ls='ls --color'
 alias vim='nvim'
@@ -85,9 +84,8 @@ alias la='ls -a --color'
 alias ll='ls -l --color'
 alias lla='ls -la --color'
 alias neofetch='fastfetch'
+alias chrome='google-chrome'
 
 # Shell integrations
-
-#eval "$(fzf --zsh)"
-eval "$(zoxide init zsh)"
-
+eval "$(fzf --zsh)"
+eval "$(zoxide init --cmd cd zsh)"
