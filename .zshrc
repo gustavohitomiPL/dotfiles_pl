@@ -69,13 +69,6 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
-#Path
-export USER_GCP="gustavo_hitomi"
-export PATH="$PATH:/opt/nvim/"
-export JAVA_HOME=/usr/bin/
-export PATH="/home/hitomi/.local/bin:$PATH"
-. "$HOME/.asdf/asdf.sh"
-
 # Aliases
 alias ls='ls --color'
 alias vim='nvim'
@@ -84,8 +77,10 @@ alias la='ls -a --color'
 alias ll='ls -l --color'
 alias lla='ls -la --color'
 alias neofetch='fastfetch'
-alias chrome='google-chrome'
 
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+
+# Exportado pelo script de setup do Airflow
+export USER_GCP="gustavo_hitomi"
